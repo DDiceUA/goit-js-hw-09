@@ -3,12 +3,6 @@ const formData = {
     email: '',
 }
 const form = document.querySelector('.feedback-form');
-form.addEventListener('input',e=>{
-    const fD = new FormData(form);
-    formData.message = fD.get('message');
-    formData.email = fD.get('email');
-    localStorage.setItem("feedback-form-state",JSON.stringify(formData));
-})
 
 if(localStorage.getItem("feedback-form-state")){
     const loadedData = JSON.parse(localStorage.getItem("feedback-form-state"));
@@ -30,4 +24,11 @@ form.addEventListener('submit',e=> {
         return;
     }
     form.reset()
+})
+
+form.addEventListener('input',e=>{
+    const fD = new FormData(form);
+    formData.message = fD.get('message');
+    formData.email = fD.get('email');
+    localStorage.setItem("feedback-form-state",JSON.stringify(formData));
 })

@@ -90,8 +90,4 @@ imgUl.insertAdjacentHTML('afterbegin',imgsTemplate(images));
 
 let gallery = new SimpleLightbox('.gallery a',{captions: true,captionsData: 'alt',captionDelay: 250,});
 
-gallery.on('show.simplelightbox', function () {
-   
-  
-  
-});
+
